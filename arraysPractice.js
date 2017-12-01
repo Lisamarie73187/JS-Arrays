@@ -131,14 +131,17 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //if it's not, return false
 var myArray = [1,2,3,4,5]
 
-function finder(cb,array){
+function finder(array){
+  var x = getRandomArbitrary()
   for(var i = 0; i < array.length; i++){
-    if(cb == array[i]){
+    if( x == array[i]){
       return true
-    }else{return false}
+     }
+    }
+    return false
   }
-}
-finder(getRandomArbitrary(),myArray)
+
+finder(getRandomArbitrary(array))
 
 
 
@@ -147,18 +150,23 @@ finder(getRandomArbitrary(),myArray)
 
 // var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
-  Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
+  Here we're going to write a function that mimics going shopping and checking things off 
+  //of our grocery list,
   and adding new items to our list.
 
   Write a function called removeItem that is given two arguments, the first is myGroceryList, and the
-  second is an item to remove from myGroceryList. If the second argument (or the item to add or remove) matches an item in myGroceryList,
+  second is an item to remove from myGroceryList. If the second argument (or the item to add or remove) 
+  //matches an item in myGroceryList,
   remove that item from the your grocery list and return the new, updated grocery list.
 
-  Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList
+  Once you do that, write another function called addItem that is given two arguments, the first 
+  //is myGroceryList
   and the second is an item to add to your grocery list. In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
 
-  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
+  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. 
+  //Specrunner will try to call your functions without passing in valid aurguments. 
+  //When this happens, you will need to respond by returning an empty array.
 */
 
   //Code Here
