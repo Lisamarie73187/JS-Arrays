@@ -35,30 +35,41 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 // it's only argument, loops through the given array, 
 //and alerts every item in the array.
 
-// function looper(arr){
-//   for(i = 0; i<arr.length; i++){
-//   alert(arr[i])
-//   }
-// }
+// function alertMessage(messageArray){
+//   alert(messageArray)
+//   return true
+// // }
+
+
+function looper(arr){
+  for(i = 0; i<arr.length; i++){
+  alert(arr[i])
+  }
+}
 
 // console.log(looper(family))
-// //Next problem
+// // //Next problem
 
 
 
 // var letters = ['A', 'B', 'C', 'D', 'E'];
-// //Write a function called reversedLooper that is 
-// //given letters as it's only argument and loops 
-// //through the given array backwards alerting every 
-// //item in the array starting at the end.
+// // //Write a function called reversedLooper that is 
+// // //given letters as it's only argument and loops 
+// // //through the given array backwards alerting every 
+// // //item in the array starting at the end.
 
-// function reversedLooper(letrs){
-//   for(i = letrs.length-1; i>0; i--){
-//     alert(letrs[i])
-//   }
-// }
+
+function reversedLooper(arrayOfLetters){
+  var backwardsArray = []
+  for( var i = arrayOfLetters.length - 1; i >= 0; i-- ){
+    alert(arrayOfLetters[i])
+  }
+}
+
 // console.log(reversedLooper(letters))
+
 // //Next Problem
+
 
 
 var nums = [1,2,3,6,22,98,45,23,22,12];
@@ -141,14 +152,14 @@ function finder(array){
     return false
   }
 
-finder(getRandomArbitrary(array))
+// finder(getRandomArbitrary(array))
 
 
 
 //Next Problem
 
 
-// var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
   Here we're going to write a function that mimics going shopping and checking things off 
   //of our grocery list,
@@ -164,12 +175,33 @@ finder(getRandomArbitrary(array))
   and the second is an item to add to your grocery list. In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
 
-  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. 
+  In both the removeItem function and the addItem function, you will also need to check for 
+  //valid aurguments. 
   //Specrunner will try to call your functions without passing in valid aurguments. 
   //When this happens, you will need to respond by returning an empty array.
 */
 
-  //Code Here
+function removeItem(myList,item){
+  var newGroceryList = []
+  for( i = 0; i < myList.length; i++){
+    if( myList[i] !== item){
+      newGroceryList.push(myList[i])
+    }
+  }return newGroceryList
+}
+
+function addItem(updatedList, addedItem){
+  updatedList.push(addedItem)
+  return updatedList
+}
+
+
+console.log(removeItem(myGroceryList, 'chips'))
+console.log(addItem(myGroceryList, 'candy'))
+
+
+
+
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -180,20 +212,32 @@ finder(getRandomArbitrary(array))
 
 
 
-//Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
+//Write a function called maker that creates an array, fills that array with numbers from 1 to 215, 
+//then returns the array.
 
-  //Code Here
+ function maker(){
+   var makeArray = []
+   for(var i = 1; i <= 215; i ++){
+    makeArray.push(i)
+   }return makeArray
+ }
 
-
-
+ console.log(maker())
 //Next Problem
 
 
-// var numbers = [5, '9', 16, 19, '25', '34', 48];
+var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
-//array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
+//array after adding ten to each item in numbers. *Verify your answer is correct. 
+//--> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+function addTen(num){
+  var newArray = []
+  for( var i = 0; i< num.length; i++){
+    newArray.push(+num[i] + 10)
+  }return newArray
+}
+console.log(addTen(numbers))
 
 
 
@@ -212,10 +256,20 @@ for(var i = 0; i < num2; i++){
   arr2.push(i);
 }
 //Above is some code that adds a random number of values to both arr1 and arr2.
-//Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
+//Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. 
+//Return the array which is longest.
 
-  //Code Here
+function longer(arr1,arr2){
+  var short = []
+  var long = []
+  if(arr1.length > arr2.length){
+    return arr1
+  }else{
+    return arr2
+  }
+}
 
+console.log(longer(arr1,arr2))
 
 /*
 As a continuation of the previous problem, write another function called 'both'.
@@ -226,8 +280,6 @@ Your 'both' function will be given two arguments, arr1 and arr2 (from the previo
 
 Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
-
-  //Code Here
 
 
 
@@ -267,17 +319,29 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+function addEmployee(obj1,obj2,obj3,obj4){
+  devMountainEmployees.push(obj1,obj2,obj3,obj4)
+  return devMountainEmployees
+}
+
+addEmployee(tyler,cahlan,ryan,colt)
+console.log(devMountainEmployees)
+console.log(devMountainEmployees.length)
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
-
-
-
-
-//NEXT PROBLEM
+function mentalBreakdown(devMountainEmployees){
+  for(var i = 0; i < devMountainEmployees.length; i++){
+    if(devMountainEmployees[i]['name'] === 'Cahlan'){
+      devMountainEmployees.splice(i,1)
+    }
+  }return devMountainEmployees
+}
+    
+console.log(mentalBreakdown(devMountainEmployees))
+console.log(devMountainEmployees.length)
+// //NEXT PROBLEM
 
 
 /*A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects)
@@ -285,7 +349,33 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+class Userobject{
+  constructor(name,email,password,username){
+    this.name = name
+    this.email = email
+    this.password = password
+    this.username =username
+  }
+    
+}
+
+var user1 = new Userobject('Tyler Mcginnis', 'tylermcginnis33@gmail.com', 'iLoveJavaScript', 'infiniateLoop')
+var user2 = new Userobject('bob','bob@mail','1234','bobbie')
+var user3 = new Userobject('Jon','jonsnow@mail','youknownothing', 'kingofthenorth')
+
+var users = [user1,user2,user3]
+
+function remove(users){
+for(var i=0;i<users.length;i++){
+  if(users[i].email === 'tylermcginnis33@gmail.com'){
+    users.splice(i,1)
+    }
+  }return users
+}
+
+  console.log(remove(users))
+console.log(users.length)
+
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -310,4 +400,5 @@ Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
 
-//The activity we just did is very much how data works in 'the real world'.
+// The activity we just did is very much how data works in 'the real 
+//world'//*//////
